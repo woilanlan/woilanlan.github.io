@@ -1,0 +1,12 @@
+[
+    {
+       "name":"study note",
+       "url":"https://github.com/woilanlan/study-note",
+       "desc":"学习笔记"
+    },
+    {
+       "name":"shiro web",
+       "url":"https://github.com/woilanlan/shiro-web",
+       "desc":"一个简单的spring整合Shiro的Web项目"
+    }
+]
