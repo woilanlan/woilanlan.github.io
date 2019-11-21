@@ -143,7 +143,7 @@ google_analytics:
 
 # Fill in your Baidu Analytics tracking ID to enable Baidu Analytics.
 baidu_analytics:
-  enabled: true
+  enabled: false
   id: adf962d9beb0030b2a8f75acb45fd89a
 
 # Fill in you Gravatar user id / email if you want to use your gravatar as the
