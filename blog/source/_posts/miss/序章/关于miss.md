@@ -2,8 +2,7 @@
 title: 关于miss
 date: 2019-11-06 15:48:24
 categories:
-- miss
-  - 序章
+- [miss,序章]
 tags:
 - miss
 ---

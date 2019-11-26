@@ -1,8 +1,7 @@
 ---
 title: Lombok使用
 categories:
-- 工具
-  - 插件
+- [工具,插件]
 tags:
 - java
 ---

@@ -1,8 +1,7 @@
 ---
 title: 02hexo
 categories:
-- 前端知识
-  - node
+- [前端知识,node]
 tags:
 - nodejs
 ---
