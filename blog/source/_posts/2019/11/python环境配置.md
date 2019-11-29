@@ -18,17 +18,17 @@ tags:
 
 2.1 双击python的安装程序
 
-{% asset_img 01.png 图片1 %}
+![01.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/01.png)
 
 2.2 弹出安装界面
 
-{% asset_img 02.png 图片2 %}
+![02.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/02.png)
 
-{% asset_img 03.png 图片3 %}
+![03.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/03.png)
 
-{% asset_img 04.png 图片4 %}
+![04.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/04.png)
 
-{% asset_img 05.png 图片5 %}
+![05.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/05.png)
 
 2.3 验证安装成功
 
@@ -62,7 +62,7 @@ python -m venv .venv
 
 ### 4.1 安装 python 插件
 
-{% asset_img 06.png 图片6 %}
+![06.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/06.png)
 
 ### 4.2 创建项目文件夹
 
