@@ -1,5 +1,6 @@
 ---
 title: python环境配置
+date: 2019-12-01 15:00:00
 categories:
 - python入门
 tags:
@@ -18,17 +19,17 @@ tags:
 
 2.1 双击python的安装程序
 
-![01.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/01.png)
+![01.png](https://photo.woilanlan.top/blog/img/2019/12/01/01.png)
 
 2.2 弹出安装界面
 
-![02.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/02.png)
+![02.png](https://photo.woilanlan.top/blog/img/2019/12/01/02.png)
 
-![03.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/03.png)
+![03.png](https://photo.woilanlan.top/blog/img/2019/12/01/03.png)
 
-![04.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/04.png)
+![04.png](https://photo.woilanlan.top/blog/img/2019/12/01/04.png)
 
-![05.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/05.png)
+![05.png](https://photo.woilanlan.top/blog/img/2019/12/01/05.png)
 
 2.3 验证安装成功
 
@@ -62,7 +63,7 @@ python -m venv .venv
 
 ### 4.1 安装 python 插件
 
-![06.png](https://woilanlan.top/photo-gallery/blog/img/2019/11/28/06.png)
+![06.png](https://photo.woilanlan.top/blog/img/2019/12/01/06.png)
 
 ### 4.2 创建项目文件夹
 

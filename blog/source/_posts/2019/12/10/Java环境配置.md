@@ -1,5 +1,6 @@
 ---
 title: Java环境配置
+date: 2019-12-10 15:00:01
 categories:
 - Java入门
 tags:

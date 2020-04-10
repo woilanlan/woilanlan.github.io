@@ -1,6 +1,6 @@
 ---
 title: MyBatis Generator
-date: 2019-12-10 16:12:20
+date: 2019-12-10 15:00:03
 categories:
 - [JavaWeb,mybatis]
 tags:

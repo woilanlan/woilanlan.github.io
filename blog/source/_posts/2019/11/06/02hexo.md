@@ -1,5 +1,6 @@
 ---
 title: 02hexo
+date: 2019-11-06 12:03:02
 categories:
 - [前端知识,node]
 tags:
