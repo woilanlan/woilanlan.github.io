@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1、JDK下载进入java SE的下载页面，找到JDK，点击下载。 http:&#x2F;&#x2F;www.oracle.com&#x2F;technetwork&#x2F;java&#x2F;javase&#x2F;downloads&#x2F;index.html 2、环境变量配置https:&#x2F;&#x2F;blog.csdn.net&#x2F;ZZQ928000&#x2F;article&#x2F;details&#x2F;80373354 从jdk-9之后就已经没有tools.jar和dt.jar了，也不需">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java环境配置">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;10&#x2F;2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE&#x2F;index.html">
+<meta property="og:site_name" content="笑笑学生">
+<meta property="og:description" content="1、JDK下载进入java SE的下载页面，找到JDK，点击下载。 http:&#x2F;&#x2F;www.oracle.com&#x2F;technetwork&#x2F;java&#x2F;javase&#x2F;downloads&#x2F;index.html 2、环境变量配置https:&#x2F;&#x2F;blog.csdn.net&#x2F;ZZQ928000&#x2F;article&#x2F;details&#x2F;80373354 从jdk-9之后就已经没有tools.jar和dt.jar了，也不需">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-10T03:02:44.239Z">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Java环境配置</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/categories/">分类</a></li>
+         
+          <li><a href="/tags/">标签</a></li>
+         
+          <li><a href="https://github.com/woilanlan" target="_blank" rel="noopener">项目</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/04/10/2019-11-Lombok%E4%BD%BF%E7%94%A8/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/04/10/2019-11-04%E5%9B%BE%E5%BA%8A/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&text=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&title=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&is_video=false&description=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Java环境配置&body=Check out this article: http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&title=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&title=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&title=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&title=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&name=Java环境配置&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、JDK下载"><span class="toc-number">1.</span> <span class="toc-text">1、JDK下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、环境变量配置"><span class="toc-number">2.</span> <span class="toc-text">2、环境变量配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、验证是否安装成功"><span class="toc-number">3.</span> <span class="toc-text">3、验证是否安装成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、安装Eclipse"><span class="toc-number">4.</span> <span class="toc-text">4、安装Eclipse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、安装Tomcat9"><span class="toc-number">5.</span> <span class="toc-text">5、安装Tomcat9</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Java环境配置
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">笑笑学生</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-04-10T03:02:44.239Z" itemprop="datePublished">2020-04-10</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Java%E5%85%A5%E9%97%A8/">Java入门</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/java/" rel="tag">java</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="1、JDK下载"><a href="#1、JDK下载" class="headerlink" title="1、JDK下载"></a>1、JDK下载</h2><p>进入java SE的下载页面，找到JDK，点击下载。</p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+<h2 id="2、环境变量配置"><a href="#2、环境变量配置" class="headerlink" title="2、环境变量配置"></a>2、环境变量配置</h2><p><a href="https://blog.csdn.net/ZZQ928000/article/details/80373354" target="_blank" rel="noopener">https://blog.csdn.net/ZZQ928000/article/details/80373354</a></p>
+<p>从jdk-9之后就已经没有tools.jar和dt.jar了，也不需要在classpath里面配置这些jar了，配置可参考：</p>
+<ul>
+<li>JAVA_HOME=jdk安装路径</li>
+<li>JRE_HOME=jre安装路径</li>
+<li>PATH= ;%JAVA_HOME%\bin;%JRE_HOME%\bin</li>
+<li>CLASSPATH=.;%JAVA_HOME%\lib;%JRE_HOME%\lib</li>
+</ul>
+<h2 id="3、验证是否安装成功"><a href="#3、验证是否安装成功" class="headerlink" title="3、验证是否安装成功"></a>3、验证是否安装成功</h2><p>Win + R –&gt; 输入cmd –&gt;进入控制台</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br><span class="line"></span><br><span class="line"><span class="built_in">where</span> java</span><br><span class="line"></span><br><span class="line">javac -version</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、安装Eclipse"><a href="#4、安装Eclipse" class="headerlink" title="4、安装Eclipse"></a>4、安装Eclipse</h2><p><a href="http://www.eclipse.org/" target="_blank" rel="noopener">http://www.eclipse.org/</a></p>
+<p>点击Download，在Get Eclipse模块选择Download Packages，找到Eclipse IDE for Java EE Developers</p>
+<p>选择Neon Packages版本，在右边找到下载链接，点击下载。</p>
+<h2 id="5、安装Tomcat9"><a href="#5、安装Tomcat9" class="headerlink" title="5、安装Tomcat9"></a>5、安装Tomcat9</h2><p><a href="https://tomcat.apache.org/" target="_blank" rel="noopener">https://tomcat.apache.org/</a></p>
+<p>1、在左侧Download点击Tomcat 9,找到Core选择：64-bit Windows zip进行下载。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Binary Distributions</span><br><span class="line"></span><br><span class="line">Core:</span><br><span class="line"></span><br><span class="line">zip (pgp, sha1, sha512)</span><br><span class="line">tar.gz (pgp, sha1, sha512)</span><br><span class="line">32-bit Windows zip (pgp, sha1, sha512)</span><br><span class="line">64-bit Windows zip (pgp, sha1, sha512)</span><br><span class="line">32-bit/64-bit Windows Service Installer (pgp, sha1, sha512)</span><br></pre></td></tr></table></figure>
+
+<p>2、前提：正确安装jdk，并配置好系统变量例如：JAVA_HOME=jdk安装路径</p>
+<p>3、打开cmd移动到tomcat安装目录的bin目录：</p>
+<p>输入 service.bat install 安装服务，自动帮你配置好tomcat环境变量,如下图为正确安装：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\longlong&gt;d:</span><br><span class="line"></span><br><span class="line">D:\&gt;<span class="built_in">cd</span> java/tomcat/apache-tomcat-9.0.10/bin</span><br><span class="line"></span><br><span class="line">D:\java\tomcat\apache-tomcat-9.0.10\bin&gt;service.bat install</span><br><span class="line">Installing the service <span class="string">'Tomcat9'</span> ...</span><br><span class="line">Using CATALINA_HOME:    <span class="string">"D:\java\tomcat\apache-tomcat-9.0.10"</span></span><br><span class="line">Using CATALINA_BASE:    <span class="string">"D:\java\tomcat\apache-tomcat-9.0.10"</span></span><br><span class="line">Using JAVA_HOME:        <span class="string">"D:\java\Java\jdk-10.0.1"</span></span><br><span class="line">Using JRE_HOME:         <span class="string">"D:\java\Java\jre"</span></span><br><span class="line">Using JVM:              <span class="string">"D:\java\Java\jdk-10.0.1\bin\server\jvm.dll"</span></span><br><span class="line">The service <span class="string">'Tomcat9'</span> has been installed.</span><br></pre></td></tr></table></figure>
+
+<p>查看服务：按住win+R，打开运行，输入：services.msc</p>
+<p>4、启动tomcat，有四种方法：</p>
+<ul>
+<li>双击bin目录下的startup.bat批处理运行tomcat（这样的好处是可以看到运行状态，推荐使用）</li>
+<li>以管理员运行cmd运行net start tomcat9命令（9是版本号）</li>
+<li>通过任务管理器里面的服务运行</li>
+<li>双击bin目录下的tomcat9w.exe打卡并点击start运行tomcat</li>
+</ul>
+<p>5、浏览器中可以正常打开网页：<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a></p>
+<p>6、卸载Tomcat:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service.bat remove to Tomcat9</span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/categories/">分类</a></li>
+         
+          <li><a href="/tags/">标签</a></li>
+         
+          <li><a href="https://github.com/woilanlan" target="_blank" rel="noopener">项目</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、JDK下载"><span class="toc-number">1.</span> <span class="toc-text">1、JDK下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、环境变量配置"><span class="toc-number">2.</span> <span class="toc-text">2、环境变量配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、验证是否安装成功"><span class="toc-number">3.</span> <span class="toc-text">3、验证是否安装成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、安装Eclipse"><span class="toc-number">4.</span> <span class="toc-text">4、安装Eclipse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、安装Tomcat9"><span class="toc-number">5.</span> <span class="toc-text">5、安装Tomcat9</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&text=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&title=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&is_video=false&description=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Java环境配置&body=Check out this article: http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&title=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&title=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&title=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&title=Java环境配置" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/04/10/2019-11-Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/&name=Java环境配置&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Long Long
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/categories/">分类</a></li>
+         
+          <li><a href="/tags/">标签</a></li>
+         
+          <li><a href="https://github.com/woilanlan" target="_blank" rel="noopener">项目</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
