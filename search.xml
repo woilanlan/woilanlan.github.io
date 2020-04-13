@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>docsify快速入门</title>
+      <title>05docsify快速入门</title>
       <link href="/2020/04/13/docsify-started/"/>
       <url>/2020/04/13/docsify-started/</url>
       
@@ -13,16 +13,16 @@
       
       <categories>
           
-          <category> 前端知识 </category>
-          
-          <category> node </category>
+          <category> 个人博客 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> nodejs </tag>
+            <tag> 个人博客 </tag>
+            
+            <tag> docsify </tag>
             
         </tags>
       
@@ -65,16 +65,16 @@
       
       <categories>
           
-          <category> 工具 </category>
+          <category> JavaWeb </category>
           
-          <category> 插件 </category>
+          <category> Swagger2 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Swagger2 </tag>
             
         </tags>
       
@@ -119,16 +119,16 @@
       
       <categories>
           
-          <category> 工具 </category>
+          <category> JavaWeb </category>
           
-          <category> 插件 </category>
+          <category> Lombok </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Lombok </tag>
             
         </tags>
       
@@ -146,14 +146,16 @@
       
       <categories>
           
-          <category> Java入门 </category>
+          <category> java </category>
+          
+          <category> java基础 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
+            <tag> java基础 </tag>
             
         </tags>
       
@@ -171,7 +173,7 @@
       
       <categories>
           
-          <category> python入门 </category>
+          <category> python </category>
           
       </categories>
       
@@ -196,10 +198,18 @@
       
       <categories>
           
-          <category> 简历 </category>
+          <category> 工作 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 工作 </tag>
+            
+            <tag> 简历 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -219,6 +229,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 工作 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -241,6 +257,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 浏览器 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -262,6 +284,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 浏览器 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -282,6 +310,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 浏览器 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -349,8 +383,6 @@
           
           <category> miss </category>
           
-          <category> 序章 </category>
-          
       </categories>
       
       
@@ -374,16 +406,14 @@
       
       <categories>
           
-          <category> 前端知识 </category>
-          
-          <category> node </category>
+          <category> 个人博客 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> nodejs </tag>
+            <tag> 个人博客 </tag>
             
         </tags>
       
@@ -401,16 +431,14 @@
       
       <categories>
           
-          <category> 前端知识 </category>
-          
-          <category> node </category>
+          <category> 个人博客 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> nodejs </tag>
+            <tag> 个人博客 </tag>
             
         </tags>
       
@@ -428,16 +456,16 @@
       
       <categories>
           
-          <category> 前端知识 </category>
-          
-          <category> node </category>
+          <category> 个人博客 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> nodejs </tag>
+            <tag> 个人博客 </tag>
+            
+            <tag> hexo </tag>
             
         </tags>
       
@@ -455,16 +483,14 @@
       
       <categories>
           
-          <category> 前端知识 </category>
-          
-          <category> node </category>
+          <category> 个人博客 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> nodejs </tag>
+            <tag> 个人博客 </tag>
             
         </tags>
       
