@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>06文章归类</title>
+      <link href="/2020/04/13/article-classify/"/>
+      <url>/2020/04/13/article-classify/</url>
+      
+        <content type="html"><![CDATA[<h2 id="文章类别和标签"><a href="#文章类别和标签" class="headerlink" title="文章类别和标签"></a>文章类别和标签</h2><p>归类说明：</p><ol><li>文章归类是为了更加条理化的组织知识，所以每一个类都应该可以看做是一个系列文章。</li><li>标签具有更明确的标识意义，标签默认与类名称相同。</li><li>文章暂时不能在当前类中被进一步分类的时候，就放在父类中。一个标签与父类名称相同，一个标签来描述自身名称。</li><li>文章如果已经细分到子类，则标签默认与子类名称相同，根据情况决定是否添加新的标签。</li><li>每一篇文章一定要有一个标签说明。</li></ol><h2 id="将一个系列的文章整理到同一个文件夹"><a href="#将一个系列的文章整理到同一个文件夹" class="headerlink" title="将一个系列的文章整理到同一个文件夹"></a>将一个系列的文章整理到同一个文件夹</h2><p>操作说明：</p><ol><li>将一个系列的相关文章移动到同一个文件夹</li><li>这个文件夹的路径要和文章里的 <code>date</code> 的日期一致</li><li>更改每篇文章里的 <code>date</code>  属性，保证每一篇文章的时间都不一样，按照文章先后顺序设置。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 个人博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 个人博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>05docsify快速入门</title>
       <link href="/2020/04/13/docsify-started/"/>
       <url>/2020/04/13/docsify-started/</url>
@@ -67,14 +92,14 @@
           
           <category> JavaWeb </category>
           
-          <category> Swagger2 </category>
-          
       </categories>
       
       
         <tags>
             
             <tag> Swagger2 </tag>
+            
+            <tag> JavaWeb </tag>
             
         </tags>
       
@@ -121,14 +146,14 @@
           
           <category> JavaWeb </category>
           
-          <category> Lombok </category>
-          
       </categories>
       
       
         <tags>
             
             <tag> Lombok </tag>
+            
+            <tag> JavaWeb </tag>
             
         </tags>
       
@@ -148,14 +173,12 @@
           
           <category> java </category>
           
-          <category> java基础 </category>
-          
       </categories>
       
       
         <tags>
             
-            <tag> java基础 </tag>
+            <tag> java </tag>
             
         </tags>
       
