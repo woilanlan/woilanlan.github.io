@@ -2,9 +2,10 @@
 title: Swagger2使用
 date: 2019-12-10 15:00:04
 categories:
-- [工具,插件]
+- JavaWeb
 tags:
-- java
+- JavaWeb
+- Swagger2
 ---
 
 ## 一、工程创建

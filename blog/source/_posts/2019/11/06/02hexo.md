@@ -2,9 +2,10 @@
 title: 02hexo
 date: 2019-11-06 12:03:02
 categories:
-- [前端知识,node]
+- 个人博客
 tags:
-- nodejs
+- 个人博客
+- hexo
 ---
 
 ## 指南

@@ -2,7 +2,7 @@
 title: python环境配置
 date: 2019-12-01 15:00:00
 categories:
-- python入门
+- python
 tags:
 - python
 ---
