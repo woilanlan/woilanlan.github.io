@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>IDEA中SVN的使用03</title>
+      <link href="/2020/05/29/idea-svn-03/"/>
+      <url>/2020/05/29/idea-svn-03/</url>
+      
+        <content type="html"><![CDATA[<p>参考：</p><p>IntelliJ IDEA 下的SVN使用：<a href="https://blog.csdn.net/u013412790/article/details/71022784" target="_blank" rel="noopener">https://blog.csdn.net/u013412790/article/details/71022784</a></p><p>IntelliJ IDEA 下的svn配置及使用的非常详细的图文总结：<a href="https://blog.csdn.net/qq_27093465/article/details/74898489" target="_blank" rel="noopener">https://blog.csdn.net/qq_27093465/article/details/74898489</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> IDEA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>IDEA常见问题02</title>
+      <link href="/2020/05/29/idea-use-02/"/>
+      <url>/2020/05/29/idea-use-02/</url>
+      
+        <content type="html"><![CDATA[<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>1、java项目怎么引入自己的jar包</p><ul><li>新建lib目录，复制对应的jar包</li><li>选中所有的jar，右键单击，add as Library</li></ul><p>2、Maven项目的文件夹设置（目录无法新建java文件和包）</p><p>原因：maven中央仓库访问慢，项目生成时没有自动配置对应maven文件夹，需要手动进行设置。</p><p>选中项目，F4，打开模块设置，增加项目上下文，一般为工程的路径。</p><p>然后选中对应的文件夹，右键设置为源代码文件夹或资源文件夹</p><p>3、Maven插件打包</p><p>点击Maven模块，打开当前项目Lifecycle的，点击Toggle ‘Skip Tests’ Mode图标，双击package</p><p>在项目的target目录下就会生成对应的jar包</p><p>4、使用终端,执行java程序</p><p>点击Terminal模块，进入终端</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar commandlinerunner-0.0.1-SNAPSHOT.jar longlong woilanlan.github.io</span><br></pre></td></tr></table></figure><p>5、更改项目Properties文件的编码为UTF-8</p><p>File &gt;&gt; Settings &gt;&gt; Editor &gt;&gt; File Encodings</p><p>修改 Project Encoding , Properties Files 的编码格式为 UTF-8，勾选自动转为 ASCII 码</p><p>5、隐藏IDEA的项目配置文件</p><p>Editor &gt;&gt; File Types &gt;&gt; ignore files and folders &gt;&gt; ;.idea;*.iml;</p><p>6、编辑文件模板</p><p>选中文件夹右键 &gt;&gt; New &gt;&gt; Edit File Templates &gt;&gt; 打开 File and Code Templates 窗口</p><p>点击加号 &gt;&gt; 输入Name 和 Extension &gt;&gt; 输入模板内容 &gt;&gt; 选中 Enable Live Templates &gt;&gt; 点击 OK</p><p>7、代码重复提示</p><p>navigate to duplicate &gt;&gt; disable inspection</p><p>8、配置自动生成 serialVersionUID</p><p>File &gt;&gt; Settings &gt;&gt; Editor &gt;&gt; Inspections，勾选 Serializable class without ‘serialVersionUID’</p><h2 id="创建maven-web项目"><a href="#创建maven-web项目" class="headerlink" title="创建maven web项目"></a>创建maven web项目</h2><p>1、Maven项目，增加webapp目录</p><p>选中项目，F4，打开模块设置，选中项目名称，右键Add Web,添加Web Resource Directory文件夹</p><p>Web Resource Directories设置webapp目录：D:\springmvc\springmvc01\src\main\webapp</p><p>Web Module Deployment Descriptor设置web.xml文件：D:\springmvc\springmvc01\src\main\webapp\WEB-INF\web.xml</p><p>2、打开Artifacts设置</p><p>点击添加，Web Application:Exploded,From Modules,选中项目名称，完成添加</p><p>3、配置Tomcat</p><p>Run/Debug Configurations,点击添加，Tomcat Server,Local</p><p>打开Server设置，在Application server,点击configure,在Tomcat Home项，选择Tomcat的安装位置</p><p>打开Deployment设置，点击添加，添加我们的项目，在Application context项设置项目部署的名称</p><p>4、运行提示，找不到DispatcherServlet类</p><p>打开Artifacts设置，在右侧Output Layout右击项目名，选择Put into Output Root</p><p>​执行后，在WEB-INF在增加了lib目录，里面是项目引用的jar包</p><p>5、SpringMVC中配置了静态资源目录，但是找不到webapp目录下的图片文件。</p><p>检查输出目录:out\artifacts\项目名称\static\ 发现唯独缺少了图片的目录。</p><p>打开Artifacts设置，在右侧Output Layout里的<code>&lt;output root&gt;</code>上面点击加号，选择Directory Content,添加img的目录。</p><p>或者</p><p>点开Tomcat的配置，点击右侧的加号，选择External Source…选择你存图片的路径，然后在Application context中输入访问你静态图片的路径:/img<br>在浏览器里直接通过 localhost:8080/img/… 就可以访问你的图片了</p><p><a href="https://www.cnblogs.com/hanszhao/p/9865098.html" target="_blank" rel="noopener">IDEA中创建maven web项目</a></p><p><a href="https://blog.csdn.net/zhang8907xiaoyue/article/details/82942822" target="_blank" rel="noopener">IDEA使用Maven搭建web项目启动报找不到类</a></p><p><a href="https://blog.csdn.net/jacksonzhou88/article/details/62508188" target="_blank" rel="noopener">idea用tomcat发布javaWeb项目中的存在的图片存储路径问题解决</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> IDEA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>IDEA快捷键01</title>
+      <link href="/2020/05/29/idea-use-01/"/>
+      <url>/2020/05/29/idea-use-01/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://mp.weixin.qq.com/s/3Ij-jPPbF2R-Un0lNKzOOg" target="_blank" rel="noopener">这样配置：让你的 IDEA 好用到飞起来</a></p><h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><p>1、快速查找</p><ul><li>快速搜索类：Ctrl + N</li><li>快速搜索文件：Ctrl + Shift + N</li><li>替换当前文件中的内容：Ctrl + R</li><li>查看某一个方法或者变量在哪里被使用：Alt + F7</li><li>查看代码提示及内容：Ctrl + Q</li><li>查看类的定义：Ctrl + B 或者 按下Ctrl再鼠标左键单击</li><li>列出类中的所有方法: Ctrl + F12</li><li>查看接口或者抽象类的子类：Ctrl + Alt + B</li><li>查看类的层级关系：Ctrl + H</li><li>光标的 上/下一个位置（查看源码）：Ctrl + Alt + ←/→</li></ul><p>2、代码编辑</p><ul><li>new对象补全：Alt + Enter<ul><li>new User().var代表新增一个局部变量</li><li>new User().field代表新增一个全局变量</li></ul></li><li>类型强转：ctx.getBean(“user1”).cast</li><li>代码复制到新的一行：Ctrl + D</li><li>删除当前行：Ctrl+Y</li><li>代码向上或者向下移动：Shift + Alt + ↑/↓</li><li>在当前行的上面创建新的一行：Ctrl + Alt + Enter</li><li>在当前行的下面新建一行：Shift + Enter</li><li>行注释：Ctrl + /</li><li>块注释：Ctrl + Shift + /</li><li>代码补全：Ctrl + Alt + 空格</li><li>查看方法参数：Ctrl + P</li><li>移除无效import：Ctrl + Alt + O</li></ul><p>3、代码重构</p><ul><li>新建文件：Alt + Insert</li><li>生成get/set等方法：Alt + Insert</li><li>变量或者类名重命名: Shift + F6</li><li>打开模块设置：选中项目，F4</li><li>切换项目的JDK版本：Ctrl + shift + Alt + /</li><li>提取全局变量：Ctrl + Alt + F<ul><li>选中变量右键 –&gt; Refactor –&gt; Extract –&gt; Field</li></ul></li><li>代码包裹，选中代码后，可以被 for/if/trycache 等代码块包裹：Ctrl + Alt + T</li></ul><p>4、编译运行</p><h2 id="便捷的功能"><a href="#便捷的功能" class="headerlink" title="便捷的功能"></a>便捷的功能</h2><p>1、智能的选取</p><p>从某个变量到表达式到方法甚至到类，扩充者选取：Ctrl + W</p><p>2、丰富的导航模式</p><p>显示最近打开过的文件: Ctrl + E</p><p>打开类名搜索框：Ctrl + N 或者连按两下Shift</p><p>3、历史记录功能</p><p>在当前文件的编辑界面 –&gt; 右键 –&gt; Local History</p><p>4、辅助编码</p><p>自动在Java Bean中生成 toString()、hashCode()、equals() 以及所有的get/set 方法</p><p>Windows是 Alt + Insert，Mac是 Command + N</p><p>5、XML的完美支持</p><p>引入Spring依赖之后，就会有Spring的XML模板，可以直接用。</p><p>new –&gt; XML Configuration File –&gt; Spring Config</p><p>6、列编辑模式</p><p>按住Alt键下拉同时编辑多行</p><p>7、预置模板</p><p>显示代码模板提示：Ctrl + J</p><p><strong>main方法的生成</strong>：psvm</p><p>System.out.println的快捷输出</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;abc&quot;.sout &#x3D;&gt; System.out.println(&quot;abc&quot;);</span><br></pre></td></tr></table></figure><p><strong>for循环</strong>:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">输入: list.for 即可输出</span><br><span class="line"></span><br><span class="line">for(String s:list)&#123;&#125;</span><br></pre></td></tr></table></figure><p><strong>SQL语句</strong>：</p><p>ins、upd</p><p>在设置中新增：Live Templates</p><p>8、对Git的友好支持</p><p>IDEA集成了目前大部分的版本工智工具插件</p><p>9、智能代码</p><p>自动检查代码，发现与预置规范有出入的代码给出提示，自动完成修改</p><p>10、html相关操作</p><p>在html文件中快速引入js文件，直接拖动js文件到html的对应位置。</p><p>输入</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div#header+div.page+div#footer.class1.class2.class3</span><br></pre></td></tr></table></figure><p>按下TAB键</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"footer"</span> <span class="attr">class</span>=<span class="string">"class1 class2 class3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p><a href="https://blog.csdn.net/Black1499/article/details/81515301" target="_blank" rel="noopener">IDEA快捷键以及emmet插件的自动补全</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> IDEA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>大学1</title>
       <link href="/2020/05/19/dx-01/"/>
       <url>/2020/05/19/dx-01/</url>
