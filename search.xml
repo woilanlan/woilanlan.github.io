@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>MySQL查看和修改字符集</title>
+      <link href="/2020/07/06/mysql-view-modify-character/"/>
+      <url>/2020/07/06/mysql-view-modify-character/</url>
+      
+        <content type="html"><![CDATA[<h2 id="查看字符集编码"><a href="#查看字符集编码" class="headerlink" title="查看字符集编码"></a>查看字符集编码</h2><p>查看MYSQL数据库服务器和数据库字符集</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'%character%'</span>;</span><br></pre></td></tr></table></figure><p>如下图：</p><p><img src="https://woilanlan.top/photo-gallery/blog/img/2020/07/06/20200706112049.png" alt="20200706112049"></p><h2 id="修改字符集编码"><a href="#修改字符集编码" class="headerlink" title="修改字符集编码"></a>修改字符集编码</h2><p>在服务中找到 Mysql 对应的服务</p><p><img src="https://woilanlan.top/photo-gallery/blog/img/2020/07/06/20200706113513.png" alt="20200706113513"></p><p>双击 MySQL57 查看对应属性</p><p>可执行文件的路径：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;D:\tool\mysql\MySQL57\bin\mysqld.exe&quot; --defaults-file&#x3D;&quot;D:\tool\mysql\MySQL57\my.ini&quot; MySQL57</span><br></pre></td></tr></table></figure><p>关闭服务，修改 my.ini 文件</p><p>在 [mysqld] 下面添加 character-set-server=utf8</p><p><img src="https://woilanlan.top/photo-gallery/blog/img/2020/07/06/20200706114142.png" alt="20200706114142"></p><p>保存文件，重启 Mysql 服务。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/kai666ling/article/details/79790374" target="_blank" rel="noopener">https://blog.csdn.net/kai666ling/article/details/79790374</a></p><p><a href="https://www.cnblogs.com/xiaowie/p/12020839.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaowie/p/12020839.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Word中设置页眉和页脚</title>
+      <link href="/2020/07/03/word-header-footer/"/>
+      <url>/2020/07/03/word-header-footer/</url>
+      
+        <content type="html"><![CDATA[<h2 id="在当前页的页脚中添加页码"><a href="#在当前页的页脚中添加页码" class="headerlink" title="在当前页的页脚中添加页码"></a>在当前页的页脚中添加页码</h2><p>即当前页开始编号：1，2，3，4…等</p><ul><li>将光标放在当前页的首部，单击页面布局 –&gt; 分隔符 –&gt; 分节符 –&gt; 下一节；</li><li>在当前页的页脚处双击鼠标，进入页脚编辑状态；</li><li>单击页眉和页脚 –&gt; 链接到前一条页眉按钮，断开与前一节的联系；</li><li>单击页眉和页脚工具设计 –&gt; 页码 –&gt; 设置页码格式；</li><li>弹出页码格式对话框，在页码编号处选择起始页码，输入框中输入1；</li><li>单击页眉和页脚工具设计 –&gt; 页码 –&gt; 页面底端 –&gt; 普通数字2即可。</li></ul><p>注：在大纲视图中查看或编辑分节符</p><h2 id="奇偶页眉不同，页码连续"><a href="#奇偶页眉不同，页码连续" class="headerlink" title="奇偶页眉不同，页码连续"></a>奇偶页眉不同，页码连续</h2><p>奇数页页眉为论文题目，偶数页为学校名称，但页脚的页码要求是连续的</p><p>第一步：奇数偶数页眉设置</p><ul><li>在当前页（即奇数页，第1页），先双击页眉，出现页眉和页脚工具。如果第1页右边显示“与上一节相同”，则单击取消“链接到前一条页眉按钮”，断开与前一节的联系；</li><li>对于第2页（偶数页面），也需要断开与前一节的联系，如果第2页右边显示“与上一节相同”，则单击取消“链接到前一条页眉按钮”；</li><li>在设计 –&gt; 导航选项里 –&gt; 勾选奇偶页不同，在奇数页里输入论文题目，在偶数页里输入学校名称；</li></ul><p>第二步：奇数偶数页脚更新</p><ul><li>第一步完成后，这时页眉的奇数偶数内容设置完毕。但是，偶数页脚的页码消失了，下面需要找回偶数页码。</li><li>再把鼠标移动到奇数页码的位置，点页码 –&gt; 页面底端 –&gt; 普通数字2</li><li>再把鼠标移动到偶数页页码位置，点页码 –&gt; 页面底端 –&gt; 普通数字2，那么偶数页码出来了；</li><li>现在奇数偶数页的页码就是连续的了，即1，2，3，4，等等</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.icanzc.com/word/6582.html" target="_blank" rel="noopener">http://www.icanzc.com/word/6582.html</a></p><p><a href="https://www.jianshu.com/p/41bd13a47973" target="_blank" rel="noopener">https://www.jianshu.com/p/41bd13a47973</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows使用 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows使用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>中国汉字发展史</title>
       <link href="/2020/06/13/chinese-characters-history/"/>
       <url>/2020/06/13/chinese-characters-history/</url>
@@ -901,6 +951,19 @@
             <tag> miss </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>目录</title>
+      <link href="/2019/11/12/%E7%9B%AE%E5%BD%95/"/>
+      <url>/2019/11/12/%E7%9B%AE%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>序言:关于miss</p>]]></content>
+      
+      
       
     </entry>
     
