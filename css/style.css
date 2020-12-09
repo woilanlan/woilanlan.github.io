@@ -318,7 +318,7 @@
 }
 .py5 {
   padding-top: 4rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 body h1,
 body .h1 {
@@ -1225,7 +1225,7 @@ article .content .caption {
   margin-top: 4rem;
 }
 #footer {
-  position: relative;
+  margin-top: auto;
   bottom: 0;
   width: 100%;
   color: #666;
@@ -1269,7 +1269,6 @@ article .content .caption {
 }
 @media (min-width: 39rem) {
   #footer {
-    position: absolute;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
