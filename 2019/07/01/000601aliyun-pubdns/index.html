@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="基本概念DNSDNS是域名系统（Domain Name System）的缩写，是因特网的一项核心服务，它作为可以将域名和IP地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。 域名由于因特网的用户数量较多，所以因特网在命名时采用的是层次树状结构的命名方法。任何一个连接在因特网上的主机或路由器，都有一个唯一的层次结构的名字，即域名（domain n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云公共 DNS">
+<meta property="og:url" content="https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/index.html">
+<meta property="og:site_name" content="笑笑学生">
+<meta property="og:description" content="基本概念DNSDNS是域名系统（Domain Name System）的缩写，是因特网的一项核心服务，它作为可以将域名和IP地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。 域名由于因特网的用户数量较多，所以因特网在命名时采用的是层次树状结构的命名方法。任何一个连接在因特网上的主机或路由器，都有一个唯一的层次结构的名字，即域名（domain n">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-06-30T16:06:01.000Z">
+<meta property="article:modified_time" content="2020-12-14T09:38:27.187Z">
+<meta property="article:author" content="Long Long">
+<meta property="article:tag" content="Windows使用">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>阿里云公共 DNS</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/categories/">分类</a></li>
+         
+          <li><a href="/tags/">标签</a></li>
+         
+          <li><a href="https://github.com/woilanlan" target="_blank" rel="noopener">项目</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/08/01/000101python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/07/01/000501word-header-footer/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&text=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&title=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&is_video=false&description=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=阿里云公共 DNS&body=Check out this article: https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&title=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&title=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&title=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&title=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&name=阿里云公共 DNS&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS"><span class="toc-number">1.1.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名"><span class="toc-number">1.2.</span> <span class="toc-text">域名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阿里云公共DNS"><span class="toc-number">2.</span> <span class="toc-text">阿里云公共DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接入方式"><span class="toc-number">3.</span> <span class="toc-text">接入方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接更改公共DNS的地址"><span class="toc-number">3.1.</span> <span class="toc-text">直接更改公共DNS的地址</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名检测工具"><span class="toc-number">4.</span> <span class="toc-text">域名检测工具</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py5">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        阿里云公共 DNS
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">笑笑学生</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-06-30T16:06:01.000Z" itemprop="datePublished">2019-07-01</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Windows%E4%BD%BF%E7%94%A8/">Windows使用</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Windows%E4%BD%BF%E7%94%A8/" rel="tag">Windows使用</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>DNS是域名系统（Domain Name System）的缩写，是因特网的一项核心服务，它作为可以将域名和IP地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。</p>
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><p>由于因特网的用户数量较多，所以因特网在命名时采用的是层次树状结构的命名方法。任何一个连接在因特网上的主机或路由器，都有一个唯一的层次结构的名字，即域名（domain name）。</p>
+<h2 id="阿里云公共DNS"><a href="#阿里云公共DNS" class="headerlink" title="阿里云公共DNS"></a>阿里云公共DNS</h2><p><a href="https://www.alidns.com/" target="_blank" rel="noopener">官网</a></p>
+<p><a href="https://help.aliyun.com/product/162402.html?spm=a2c4g.11174283.6.98.1dd0923d9IFbNK" target="_blank" rel="noopener">帮助文档</a></p>
+<p>是阿里云面向所有互联网用户的全球公共递归域名解析服务。和仅使用本地LocalDNS的传统解析服务相比，使用阿里云公共解析服务，能够帮助您的互联网访问更加“快速”、“稳定”、“安全”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">IPv4地址：</span><br><span class="line"></span><br><span class="line">223.5.5.5</span><br><span class="line">223.6.6.6</span><br><span class="line"></span><br><span class="line">IPv6地址：</span><br><span class="line"></span><br><span class="line">2400:3200::1</span><br><span class="line">2400:3200:baba::1</span><br></pre></td></tr></table></figure>
+
+<h2 id="接入方式"><a href="#接入方式" class="headerlink" title="接入方式"></a>接入方式</h2><h3 id="直接更改公共DNS的地址"><a href="#直接更改公共DNS的地址" class="headerlink" title="直接更改公共DNS的地址"></a>直接更改公共DNS的地址</h3><p>普通用户通过将DNS地址改成阿里云公共的DNS地址，就能实现快速接入。</p>
+<p>参考：<a href="https://www.alidns.com/setup" target="_blank" rel="noopener">https://www.alidns.com/setup</a></p>
+<p>Windows系统设置</p>
+<ul>
+<li>打开 控制面板 —&gt; 网络和Internet —&gt; 网络和共享中心</li>
+<li>点击左侧 更改适配器设置</li>
+<li>选中正在联网的网络连接，右键选择 属性</li>
+<li>选中 Internet 协议版本 4 (TCP/IPv4) ，点击 属性</li>
+<li>选择使用指定的DNS，在DNS服务器地址中输入 223.5.5.5 和 223.6.6.6</li>
+<li>点击 确定 ，设置完成。</li>
+</ul>
+<h2 id="域名检测工具"><a href="#域名检测工具" class="headerlink" title="域名检测工具"></a>域名检测工具</h2><p><a href="https://help.aliyun.com/document_detail/155515.html?spm=a2c4g.11174283.6.722.1a58571f3l3mSi" target="_blank" rel="noopener">帮助文档</a></p>
+<p><a href="https://zijian.aliyun.com/?spm=a2c4g.11186623.2.16.3dd43deefoTZ4n#/domainDetect" target="_blank" rel="noopener">工具网址</a></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/categories/">分类</a></li>
+         
+          <li><a href="/tags/">标签</a></li>
+         
+          <li><a href="https://github.com/woilanlan" target="_blank" rel="noopener">项目</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS"><span class="toc-number">1.1.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名"><span class="toc-number">1.2.</span> <span class="toc-text">域名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阿里云公共DNS"><span class="toc-number">2.</span> <span class="toc-text">阿里云公共DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接入方式"><span class="toc-number">3.</span> <span class="toc-text">接入方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接更改公共DNS的地址"><span class="toc-number">3.1.</span> <span class="toc-text">直接更改公共DNS的地址</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名检测工具"><span class="toc-number">4.</span> <span class="toc-text">域名检测工具</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&text=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&title=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&is_video=false&description=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=阿里云公共 DNS&body=Check out this article: https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&title=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&title=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&title=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&title=阿里云公共 DNS" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://blog.woilanlan.top/2019/07/01/000601aliyun-pubdns/&name=阿里云公共 DNS&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Long Long
+  </div>
+  <div>
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/categories/">分类</a></li>
+         
+          <li><a href="/tags/">标签</a></li>
+         
+          <li><a href="https://github.com/woilanlan" target="_blank" rel="noopener">项目</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+  <div>
+    <a target="_blank" href="https://beian.miit.gov.cn">
+      <p style="height:20px;color:#939393;">豫ICP备2020032001号</p>
+    </a>
+  </div>
+  <div class="footer-right">
+    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41122202000048" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+      <img src="/images/beian.png" style="float:left;"/>
+      <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">豫公网安备 41122202000048号</p>
+    </a>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

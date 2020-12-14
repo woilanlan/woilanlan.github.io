@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="常见问题1、java项目怎么引入自己的jar包  新建lib目录，复制对应的jar包 选中所有的jar，右键单击，add as Library  2、Maven项目的文件夹设置（目录无法新建java文件和包） 原因：maven中央仓库访问慢，项目生成时没有自动配置对应maven文件夹，需要手动进行设置。 选中项目，F4，打开模块设置，增加项目上下文，一般为工程的路径。 然后选中对应的文件夹，右键设">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDEA常用配置">
+<meta property="og:url" content="https://blog.woilanlan.top/2019/01/01/000202idea-conf/index.html">
+<meta property="og:site_name" content="笑笑学生">
+<meta property="og:description" content="常见问题1、java项目怎么引入自己的jar包  新建lib目录，复制对应的jar包 选中所有的jar，右键单击，add as Library  2、Maven项目的文件夹设置（目录无法新建java文件和包） 原因：maven中央仓库访问慢，项目生成时没有自动配置对应maven文件夹，需要手动进行设置。 选中项目，F4，打开模块设置，增加项目上下文，一般为工程的路径。 然后选中对应的文件夹，右键设">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-12-31T16:02:02.000Z">
+<meta property="article:modified_time" content="2020-12-14T07:51:10.579Z">
+<meta property="article:author" content="Long Long">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="idea">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>IDEA常用配置</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/categories/">分类</a></li>
+         
+          <li><a href="/tags/">标签</a></li>
+         
+          <li><a href="https://github.com/woilanlan" target="_blank" rel="noopener">项目</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/01/01/000203idea-svn/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/01/01/000201idea-use/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://blog.woilanlan.top/2019/01/01/000202idea-conf/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&text=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&title=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&is_video=false&description=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=IDEA常用配置&body=Check out this article: https://blog.woilanlan.top/2019/01/01/000202idea-conf/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&title=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&title=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&title=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&title=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&name=IDEA常用配置&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题"><span class="toc-number">1.</span> <span class="toc-text">常见问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建maven-web项目"><span class="toc-number">2.</span> <span class="toc-text">创建maven web项目</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py5">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        IDEA常用配置
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">笑笑学生</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-12-31T16:02:02.000Z" itemprop="datePublished">2019-01-01</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/java/">java</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/idea/" rel="tag">idea</a>, <a class="tag-link" href="/tags/java/" rel="tag">java</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>1、java项目怎么引入自己的jar包</p>
+<ul>
+<li>新建lib目录，复制对应的jar包</li>
+<li>选中所有的jar，右键单击，add as Library</li>
+</ul>
+<p>2、Maven项目的文件夹设置（目录无法新建java文件和包）</p>
+<p>原因：maven中央仓库访问慢，项目生成时没有自动配置对应maven文件夹，需要手动进行设置。</p>
+<p>选中项目，F4，打开模块设置，增加项目上下文，一般为工程的路径。</p>
+<p>然后选中对应的文件夹，右键设置为源代码文件夹或资源文件夹</p>
+<p>3、Maven插件打包</p>
+<p>点击Maven模块，打开当前项目Lifecycle的，点击Toggle ‘Skip Tests’ Mode图标，双击package</p>
+<p>在项目的target目录下就会生成对应的jar包</p>
+<p>4、使用终端,执行java程序</p>
+<p>点击Terminal模块，进入终端</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar commandlinerunner-0.0.1-SNAPSHOT.jar longlong woilanlan.github.io</span><br></pre></td></tr></table></figure>
+
+<p>5、更改项目Properties文件的编码为UTF-8</p>
+<p>File &gt;&gt; Settings &gt;&gt; Editor &gt;&gt; File Encodings</p>
+<p>修改 Project Encoding , Properties Files 的编码格式为 UTF-8，勾选自动转为 ASCII 码</p>
+<p>5、隐藏IDEA的项目配置文件</p>
+<p>Editor &gt;&gt; File Types &gt;&gt; ignore files and folders &gt;&gt; ;.idea;*.iml;</p>
+<p>6、编辑文件模板</p>
+<p>选中文件夹右键 &gt;&gt; New &gt;&gt; Edit File Templates &gt;&gt; 打开 File and Code Templates 窗口</p>
+<p>点击加号 &gt;&gt; 输入Name 和 Extension &gt;&gt; 输入模板内容 &gt;&gt; 选中 Enable Live Templates &gt;&gt; 点击 OK</p>
+<p>7、代码重复提示</p>
+<p>navigate to duplicate &gt;&gt; disable inspection</p>
+<p>8、配置自动生成 serialVersionUID</p>
+<p>File &gt;&gt; Settings &gt;&gt; Editor &gt;&gt; Inspections，勾选 Serializable class without ‘serialVersionUID’</p>
+<h2 id="创建maven-web项目"><a href="#创建maven-web项目" class="headerlink" title="创建maven web项目"></a>创建maven web项目</h2><p>1、Maven项目，增加webapp目录</p>
+<p>选中项目，F4，打开模块设置，选中项目名称，右键Add Web,添加Web Resource Directory文件夹</p>
+<p>Web Resource Directories设置webapp目录：D:\springmvc\springmvc01\src\main\webapp</p>
+<p>Web Module Deployment Descriptor设置web.xml文件：D:\springmvc\springmvc01\src\main\webapp\WEB-INF\web.xml</p>
+<p>2、打开Artifacts设置</p>
+<p>点击添加，Web Application:Exploded,From Modules,选中项目名称，完成添加</p>
+<p>3、配置Tomcat</p>
+<p>Run/Debug Configurations,点击添加，Tomcat Server,Local</p>
+<p>打开Server设置，在Application server,点击configure,在Tomcat Home项，选择Tomcat的安装位置</p>
+<p>打开Deployment设置，点击添加，添加我们的项目，在Application context项设置项目部署的名称</p>
+<p>4、运行提示，找不到DispatcherServlet类</p>
+<p>打开Artifacts设置，在右侧Output Layout右击项目名，选择Put into Output Root</p>
+<p>​执行后，在WEB-INF在增加了lib目录，里面是项目引用的jar包</p>
+<p>5、SpringMVC中配置了静态资源目录，但是找不到webapp目录下的图片文件。</p>
+<p>检查输出目录:out\artifacts\项目名称\static\ 发现唯独缺少了图片的目录。</p>
+<p>打开Artifacts设置，在右侧Output Layout里的<code>&lt;output root&gt;</code>上面点击加号，选择Directory Content,添加img的目录。</p>
+<p>或者</p>
+<p>点开Tomcat的配置，点击右侧的加号，选择External Source…选择你存图片的路径，然后在Application context中输入访问你静态图片的路径:/img<br>在浏览器里直接通过 localhost:8080/img/… 就可以访问你的图片了</p>
+<p><a href="https://www.cnblogs.com/hanszhao/p/9865098.html" target="_blank" rel="noopener">IDEA中创建maven web项目</a></p>
+<p><a href="https://blog.csdn.net/zhang8907xiaoyue/article/details/82942822" target="_blank" rel="noopener">IDEA使用Maven搭建web项目启动报找不到类</a></p>
+<p><a href="https://blog.csdn.net/jacksonzhou88/article/details/62508188" target="_blank" rel="noopener">idea用tomcat发布javaWeb项目中的存在的图片存储路径问题解决</a></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/categories/">分类</a></li>
+         
+          <li><a href="/tags/">标签</a></li>
+         
+          <li><a href="https://github.com/woilanlan" target="_blank" rel="noopener">项目</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题"><span class="toc-number">1.</span> <span class="toc-text">常见问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建maven-web项目"><span class="toc-number">2.</span> <span class="toc-text">创建maven web项目</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://blog.woilanlan.top/2019/01/01/000202idea-conf/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&text=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&title=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&is_video=false&description=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=IDEA常用配置&body=Check out this article: https://blog.woilanlan.top/2019/01/01/000202idea-conf/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&title=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&title=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&title=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&title=IDEA常用配置" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://blog.woilanlan.top/2019/01/01/000202idea-conf/&name=IDEA常用配置&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Long Long
+  </div>
+  <div>
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/categories/">分类</a></li>
+         
+          <li><a href="/tags/">标签</a></li>
+         
+          <li><a href="https://github.com/woilanlan" target="_blank" rel="noopener">项目</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+  <div>
+    <a target="_blank" href="https://beian.miit.gov.cn">
+      <p style="height:20px;color:#939393;">豫ICP备2020032001号</p>
+    </a>
+  </div>
+  <div class="footer-right">
+    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41122202000048" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+      <img src="/images/beian.png" style="float:left;"/>
+      <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">豫公网安备 41122202000048号</p>
+    </a>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
