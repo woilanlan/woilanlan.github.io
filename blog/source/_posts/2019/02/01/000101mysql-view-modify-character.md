@@ -17,13 +17,13 @@ show variables like '%character%';
 
 如下图：
 
-![20200706112049](https://woilanlan.top/photo-gallery/blog/img/2020/07/06/20200706112049.png)
+![20200706112049](https://photo.woilanlan.top/blog/img/2020/07/06/20200706112049.png)
 
 ## 修改字符集编码
 
 在服务中找到 Mysql 对应的服务
 
-![20200706113513](https://woilanlan.top/photo-gallery/blog/img/2020/07/06/20200706113513.png)
+![20200706113513](https://photo.woilanlan.top/blog/img/2020/07/06/20200706113513.png)
 
 双击 MySQL57 查看对应属性
 
@@ -37,7 +37,7 @@ show variables like '%character%';
 
 在 [mysqld] 下面添加 character-set-server=utf8
 
-![20200706114142](https://woilanlan.top/photo-gallery/blog/img/2020/07/06/20200706114142.png)
+![20200706114142](https://photo.woilanlan.top/blog/img/2020/07/06/20200706114142.png)
 
 保存文件，重启 Mysql 服务。
 

@@ -2,9 +2,9 @@
 title: 阿里云公共 DNS
 date: 2019-07-01 00:06:01
 categories:
-  - Windows使用
+- Windows使用
 tags:
-  - Windows使用
+- Windows使用
 ---
 
 ## 基本概念
