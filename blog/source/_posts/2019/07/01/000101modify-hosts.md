@@ -2,9 +2,9 @@
 title: 修改hosts文件
 date: 2019-07-01 00:01:01
 categories:
-- Windows使用
+- windows使用
 tags:
-- Windows使用
+- windows使用
 ---
 
 

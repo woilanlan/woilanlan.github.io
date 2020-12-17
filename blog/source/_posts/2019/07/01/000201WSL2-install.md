@@ -2,9 +2,9 @@
 title: WSL2的安装
 date: 2019-07-01 00:02:01
 categories:
-- Windows使用
+- windows使用
 tags:
-- Windows使用
+- windows使用
 ---
 
 

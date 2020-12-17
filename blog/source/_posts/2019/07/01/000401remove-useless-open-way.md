@@ -2,9 +2,9 @@
 title: 删除无用的打开方式
 date: 2019-07-01 00:04:01
 categories:
-- Windows使用
+- windows使用
 tags:
-- Windows使用
+- windows使用
 ---
 
 问题描述：

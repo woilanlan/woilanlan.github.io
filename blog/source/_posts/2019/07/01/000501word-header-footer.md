@@ -2,9 +2,9 @@
 title: Word中设置页眉和页脚
 date: 2019-07-01 00:05:01
 categories:
-- Windows使用
+- windows使用
 tags:
-- Windows使用
+- windows使用
 ---
 
 ## 在当前页的页脚中添加页码

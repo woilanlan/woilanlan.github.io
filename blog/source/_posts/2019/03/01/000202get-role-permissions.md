@@ -1,10 +1,11 @@
 ---
 title: 获取角色对应的权限列表
-date: 2019-03-02 00:02:01
+date: 2019-03-01 00:02:02
 categories:
-- EasyUI
+- 前端知识
 tags:
-- EasyUI
+- 前端知识
+- easyUI
 ---
 
 需求描述：
