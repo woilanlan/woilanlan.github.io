@@ -2,8 +2,9 @@
 title: MySQL查看和修改字符集
 date: 2019-02-01 00:01:01
 categories:
-- mysql
+- 数据库
 tags:
+- 数据库
 - mysql
 ---
 

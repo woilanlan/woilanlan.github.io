@@ -56,8 +56,8 @@ public class JpaApplicationTests {
 
 3、查询关键字
 
-![20200926164408138](https://woilanlan.top/photo-gallery/blog/img/2020/05/07/20200926164408138.png)
+![20200926164408138](https://photo.woilanlan.top/blog/img/2020/05/07/20200926164408138.png)
 
-![20200926171052390](https://woilanlan.top/photo-gallery/blog/img/2020/05/07/20200926171052390.png)
+![20200926171052390](https://photo.woilanlan.top/blog/img/2020/05/07/20200926171052390.png)
 
-![20200926171627901](https://woilanlan.top/photo-gallery/blog/img/2020/05/07/20200926171627901.png)
+![20200926171627901](https://photo.woilanlan.top/blog/img/2020/05/07/20200926171627901.png)
